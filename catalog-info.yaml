@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rdpmf448s-java-springboot-gitops
+  description: This is GitOps manifest for rdpmf448s-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: rdpmf448s-java-springboot
+    janus-idp.io/tekton: rdpmf448s-java-springboot 
+    backstage.io/kubernetes-id: rdpmf448s-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rdpmf448s-java-springboot
